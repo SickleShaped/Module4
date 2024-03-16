@@ -6,23 +6,37 @@ namespace module4
     {
         public static void Main(string[] args)
         {
-            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
 
-            int temp;
-            for(int i = 0; i < arr.GetUpperBound(0); i++)
+            for (int j=0; j<3; j++)
             {
-                for (int j = 0; j < arr.GetUpperBound(1); j++)
-                    for (int k = j + 1; k<arr.GetUpperBound(1);k++)       
-                        if(arr[i,j] > arr[i,k])
-                        {
-                            temp = arr[i,k];
-                            arr[i, k] = arr[i, j];
-                            arr[i,j] = temp;
-                        }
-            }
+                (string Name, string LastName, string Login, int LoginLength, bool HasPet, double Age, string[] favcolors) User;
 
-            foreach(var a in arr)
-            { Console.WriteLine(a); }
+                Console.WriteLine("Введите имя");
+                User.Name = Console.ReadLine();
+
+                Console.WriteLine("Введите фамилию");
+                User.LastName = Console.ReadLine();
+
+                Console.WriteLine("Введите логин");
+                User.Login = Console.ReadLine();
+
+                User.LoginLength = User.Login.Length;
+                Console.WriteLine("Есть ли у вас животные? Да или Нет");
+                var anwser = Console.ReadLine();
+                if (anwser == "Да") { User.HasPet = true; } else { User.HasPet = false; }
+
+                Console.WriteLine("Введите возраст");
+                User.Age = Double.Parse(Console.ReadLine());
+
+                User.favcolors = new string[3];
+                Console.WriteLine("Введите три любимых цвета пользователя");
+                for (int i = 0; i < 3; i++)
+                {
+                    User.favcolors[i] = Console.ReadLine();
+                }
+            }
+            
+
 
         }
     }
