@@ -6,13 +6,14 @@ namespace module4
     {
         public static void Main(string[] args)
         {
-            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-            int summ = 0;
-            foreach (var item in arr)
+            int[] arr = { -5, 6, 9, 1, 2, -3 };
+            int natural = 0;
+            foreach (var number in arr)
             {
-                summ += item;
+                if (number >= 0) { natural++; }
             }
-            Console.WriteLine(summ);
+
+            Console.WriteLine(natural);
 
         }
     }
